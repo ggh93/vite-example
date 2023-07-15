@@ -1,23 +1,16 @@
 // import { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
+// import { Header } from "./Header";
+import Router from "./core/router";
 
-function App() {
-  // const [count, setCount] = useState(0);
-
+export function App() {
   return (
-    <>
-      <div className="main">
-        <h2>로그인 페이지</h2>
-        <div className="container">
-          <input type="text" className="account" placeholder="ID" />
-          <input type="text" className="account" placeholder="PASSWORD" />
-          <button className="login" onClick={() => []}>
-            Login
-          </button>
-        </div>
-      </div>
-    </>
+    <div>
+      <BrowserRouter>
+        {/* <Header /> */}
+        <Router />
+      </BrowserRouter>
+    </div>
   );
 }
-
-export default App;
