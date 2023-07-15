@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import "./App.css";
+// import "./App.css";
 
 type Props = {
   id: string;
@@ -33,25 +33,31 @@ export function Join() {
   };
 
   return (
-    <div className="root">
-      <div className="main">
-        <h1>우리들의 변호사</h1>
-        <form className="container" onSubmit={handleSubmit(onSubmit)}>
-          <div>
+    <div className="flex items-center justify-center w-screen h-screen">
+      <div className="p-4 border rounded-lg border-slate-300 hover:border-indigo-300">
+        <h1 className="mb-5 text-xl font-semibold ">우리들의 변호사</h1>
+        <form
+          className="flex flex-col justify-center"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className="">
             <input
               type="text"
-              className="account"
+              className="flex mb-3 rounded-sm bg-gray-light"
               placeholder="ID"
               {...register("id")}
             />
             <input
               type="password"
-              className="account"
+              className="flex mb-3 rounded-sm bg-gray-light"
               placeholder="PASSWORD"
               defaultValue={""}
               {...register("password", { required: true })}
             />
-            <button type="submit" className="login">
+            <button
+              type="submit"
+              className="flex justify-center w-full mb-3 rounded-lg bg-gray"
+            >
               로그인
             </button>
             {errors.password && (
