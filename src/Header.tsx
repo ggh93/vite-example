@@ -1,22 +1,27 @@
-import { DiApple } from "react-icons/di";
+import { useNavigate } from "react-router-dom";
+
+// import { DiApple } from "react-icons/di";
 
 export const Header = () => {
+  const nav = useNavigate();
   return (
     <>
-      <div className="bg-red-600">흠</div>
-      <div className="header" style={{ borderBottom: "1px solid" }}>
-        <div className="left">
-          <h2>
-            <DiApple />
-          </h2>
-        </div>
-        <div className="right">
-          <div className="ml-3">
-            <button>로그인</button>
+      <div className="" style={{ borderBottom: "1px solid" }}>
+        <div className="">
+          <div className="m-3">
+            <button
+              className="flex justify-center w-24 mb-3 text-white rounded-lg bg-orange border-orange"
+              onClick={() => {
+                localStorage.removeItem("login-token");
+                nav("/");
+              }}
+            >
+              로그아웃
+            </button>
           </div>
-          <div className="right_button">
+          {/* <div className="right_button">
             <button>회원가입</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
